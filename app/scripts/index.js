@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import App from './components/App';
+import MemberTable from './components/MemberTable';
 
 const render = (Component) => {
   ReactDOM.render(
@@ -14,7 +15,8 @@ const render = (Component) => {
   );
 };
 
-render(App);
+//render(App);
+render(MemberTable);
 
 // home module replacement API
 if (module.hot) {

@@ -1,0 +1,21 @@
+//.member-table {
+.memberTable {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: gray;
+  background-color: gray;
+}
+
+//table {
+//  display: table;
+//  border-collapse: separate;
+//  border-spacing: 2px;
+//  border-color: gray;
+//}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
