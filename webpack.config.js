@@ -42,6 +42,10 @@ const config = {
         //use: ExtractTextPlugin.extract({
         //  use: 'css-loader'
         //})
+      },
+      {
+        test: /\.json/,
+        use: 'json-loader'
       }
     ]
   },

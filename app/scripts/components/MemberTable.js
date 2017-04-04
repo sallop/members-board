@@ -2,32 +2,14 @@ import React from 'react';
 //import styles from '../../styles/App.scss';
 import styles from '../../styles/MemberTable.scss';
 
-//const styles = {
-//  memberTable: {
-//    display: "table",
-//    borderCollapse: "separate",
-//    borderSpacing: "2px",
-//    borderColor: "gray"
-//  },
-//}
-
-// <table className={styles.memberTable}>
-//const MemberTable = () => ();
-//const MemberTable = (members) => {
-//const MemberTable = ({members}) => {
-//const MemberTable = (props) => {
-//const MemberTable = ({props}) => {
-//const MemberTable = ({props}) => {
 const MemberTable = ({members}) => {
   var tags = [];
 
   console.log(members)
-  //console.log(props)
-  //const members = props.props
 
   members.forEach((member)=>{
     tags.push(
-    <tr>
+    <tr key={member.id}>
       <td>{member.id}</td>
       <td>{member.group}</td>
       <td>{member.name}</td>
