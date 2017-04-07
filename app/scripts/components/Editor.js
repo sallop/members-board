@@ -2,12 +2,11 @@ import React, { Component, PropTypes } from 'react';
 //import styles from '../../styles/App.scss';
 //import styles from '../../styles/MemberTable.scss';
 import styles from '../../styles/Editor.scss';
+import * as constants from '../constants';
 
 const InputForms = (state) => class extends Component {
   constructor(props){
     super(props);
-    console.log(props);
-    console.log(state);
     this.state = state;
   }
 
@@ -22,34 +21,11 @@ const InputForms = (state) => class extends Component {
   }
 
   render(){
-    const translates = {
-      id:"番号",
-      group:"班",
-      name:"氏名",
-      pronounce:"ふりがな",
-      spiritualName:"霊名",
-      birthday:"生年月日",
-      telephone:"電話",
-      postcode:"郵便番号",
-      address:"住所",
-      info:"備考",
-    };
-
-    //const styles = {
-    //  label: {
-    //    width: '180px',
-    //    clear: 'left',
-    //    textAlign: 'right',
-    //    paddingRight: '10px'
-    //  },
-    //  input: {
-    //    float: 'left'
-    //  }
-    //};
+    const member = constants.MEMBER
 
     const tmpl = (key) => (
       <li key={key}>
-        <label>{translates[key]}:
+        <label>{member[key]}:
         </label>
           <input type="text" value={this.state[key]} onChange={this.handleChange.bind(this, key)} />
       </li>
@@ -67,56 +43,22 @@ const InputForms = (state) => class extends Component {
   }
 }
 
-//const MembiiijerTable = ({members}) => {
-const Editor = () => {
+const Editor = ({member}) => {
   var tags = [];
-  var dict  = {
-      id:"番号",
-      group:"班",
-      name:"氏名",
-      pronounce:"ふりがな",
-      spiritualName:"霊名",
-      birthday:"生年月日",
-      telephone:"電話",
-      postcode:"郵便番号",
-      address:"住所",
-      info:"備考",
-  };
   var form = (
-      <form>
-        <label>
-          Name:<input type="text" name="name" />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-      );
-  //return <InputForms />;
-  var InputPane = InputForms({...dict});
-  console.log(`${InputPane}`)
-  //var InputPane = InputForms({});
+    <form>
+      <label>
+        Name:<input type="text" name="name" />
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+  );
+  var InputPane = InputForms({...member});
   return (
     <div>
       <InputPane />
     </div>
   );
-
-  //return (
-  //  <ul>
-  //    <li>番号:</li>
-  //    <li>班:</li>
-  //    <li>氏名:</li>
-  //    <li>ふりがな:</li>
-  //    <li>霊名:</li>
-  //    <li>生年月日:</li>
-  //    <li>電話:</li>
-  //    <li>郵便番号:</li>
-  //    <li>住所:</li>
-  //    <li>備考:</li>
-  //    <li>
-  //      {form}
-  //    </li>
-  //  </ul>
-  //);
 }
 
 export default Editor;

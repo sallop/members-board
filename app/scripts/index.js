@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 
 import { AppContainer } from 'react-hot-loader';
 
-import App from './components/App';
+//import App from './components/App';
+import App from './containers/App';
 //import MemberTable from './components/MemberTable';
 
 const render = (Component) => {
@@ -23,7 +24,8 @@ render(App);
 
 // home module replacement API
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
+  //module.hot.accept('./components/App', () => {
+  module.hot.accept('./containers/App', () => {
     render(App)
   });
 }
