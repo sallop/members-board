@@ -3,6 +3,7 @@ import React from 'react';
 import styles from '../../styles/MemberTable.scss';
 import * as constants from '../constants';
 
+//const MemberTable = (members) => {
 const MemberTable = ({members}) => {
   var tags = [];
 

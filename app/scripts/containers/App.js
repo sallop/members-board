@@ -1,14 +1,18 @@
 import React from 'react';
 import styles from '../../styles/App.scss';
-import MemberTable from '../components/MemberTable';
-import Editor from '../components/Editor';
+//import MemberTable from '../components/MemberTable';
+//import Editor from '../components/Editor';
+import MemberTable from './MemberTable';
+import Editor from './Editor';
+
+
 //import * from '../actions';
 import * as actions from '../actions';
 import members from '../../../data/members.json';
 import { Provider, connect } from 'react-redux';
 import { createStore } from 'redux'
 import rootReducer from '../reducers'
-let store = createStore(rootReducer);
+//let store = createStore(rootReducer);
 
 //const App = () => (
 //  <div className={styles.app}>
@@ -41,25 +45,51 @@ let store = createStore(rootReducer);
 //)(TodoListContainer)
 
 
-//const App = () => {
-const App = ({editor, members}) => {
+const App = () => {
+//const App = ({editor, members}) => { // come from root store
   //const member = members[0]
-  console.log("JSON.stringify(editory)")
-  console.log(JSON.stringify(editor))
-  console.log("JSON.stringify(members)")
-  console.log(JSON.stringify(members))
+  //let store = createStore(rootReducer);
+
+  //console.log("App = ({editor, members})") 
+  //console.log("store = ${store}") 
+  //console.log("JSON.stringify(editory)")
+  //console.log(JSON.stringify(editor))
+  //console.log("JSON.stringify(members)")
+  //console.log(JSON.stringify(members))
+
+
+  //return (
+  //  <Provider store={createStore(rootReducer)}>
+  //    <div className={styles.app}>
+  //      <div className={styles.editor}>
+  //        <Editor member={editor} />
+  //      </div>
+  //      <div className={styles.memberTable}>
+  //        <MemberTable members={members} />
+  //      </div>
+  //    </div>
+  //  </Provider>
+  //);
+  //return (
+  //	<div className={styles.app}>
+  //	  <div className={styles.editor}>
+  //	    <Editor member={editor} />
+  //	  </div>
+  //	  <div className={styles.memberTable}>
+  //	    <MemberTable members={members} />
+  //	  </div>
+  //	</div>
+  //);
 
   return (
-    <Provider store={store}>
-      <div className={styles.app}>
-        <div className={styles.editor}>
-          <Editor member={editor} />
-        </div>
-        <div className={styles.memberTable}>
-          <MemberTable members={members} />
-        </div>
-      </div>
-    </Provider>
+  	<div className={styles.app}>
+  	  <div className={styles.editor}>
+  	    <Editor/>
+  	  </div>
+  	  <div className={styles.memberTable}>
+  	    <MemberTable/>
+  	  </div>
+  	</div>
   );
 }
 
@@ -121,7 +151,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.setValueToTable(members))
   }
 })
-
+ 
 export default connect(
   mapStateToProps,
   mapDispatchToProps

@@ -57,6 +57,8 @@ function editor(state = initialState, action){
   }
 }
 
+export default editor
+
 //function setValueToTable(state = initialState, action){
 function members(state = initialState, action){
   console.log("JSON.stringify(state)")
@@ -90,10 +92,10 @@ function members(state = initialState, action){
 //
 //export default todoApp
 
-export default combineReducers({
-  editor,
-  members
-  //memberTable,
-  //setValueToEditor,
-  //setValueToTable
-})
+// export default combineReducers({
+//   editor,
+//   members
+//   //memberTable,
+//   //setValueToEditor,
+//   //setValueToTable
+// })
