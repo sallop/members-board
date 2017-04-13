@@ -54,6 +54,7 @@ const Editor = ({member}) => {
     </form>
   );
   var InputPane = InputForms({...member});
+  console.log(`Editor member = ${JSON.stringify(member)}`)
   return (
     <div>
       <InputPane />
